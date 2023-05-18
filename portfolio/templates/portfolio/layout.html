@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'portfolio/css/layout.css' %}">
+</head>
+<body>
+<header>
+    <div>Vera Tavares</div>
+    <nav>
+        <a href="{% url 'portfolio:home' %}">home</a>
+        <a href="">products</a>
+        <a href="">about</a>
+        <a href="">contact</a>
+    </nav>
+</header>
+
+<main>
+    {% block main %}
+    {% endblock main %}
+</main>
+
+<footer>ULusófona, 2023</footer>
+
+</body>
+</html>
