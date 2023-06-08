@@ -1,0 +1,13 @@
+<!-- educacao.html -->
+
+{% extends 'portfolio/layout.html' %}
+
+{% block main %}
+    <div id="educacao" class="">
+    {% for educacao in educacao %}
+        <div class="educacao-info">
+            <h3>{{ educacao.nome }}</h3>
+        </div>
+    {% endfor %}
+    </div>
+{% endblock %}

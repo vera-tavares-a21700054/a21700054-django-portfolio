@@ -1,0 +1,32 @@
+
+{% extends 'portfolio/layout.html' %}
+
+{% block main %}
+    <div id="outras_competencias" class="">
+    {% for outras_competencias in outras_competencias %}
+        <div class="outras_competencias-info">
+            <h3>{{ outras_competencias.nome }}</h3>
+            <p>{{ outras_competencias.dataInicio }} - {{ outras_competencias.dataFim }}</p>
+            <p>{{ outras_competencias.instituicao}}</p>
+        </div>
+    {% endfor %}
+    </div>
+{% endblock %}
+
+{% block main %}
+        <main>
+            <h1><span style="color:#13312d; font-weight:bold; font-size:xxx-large; text-shadow: 10cap;">Outras Competências</h1>
+            </span>
+
+            <table class="tabelaOutrasCompetencias">
+                <tbody>
+                    <tr class="header-tr">
+                        <td>NOME</td>
+                        <td>DATA DE INICIO</td>
+                        <td>DATA FIM</td>
+                        <td>INSTITUIÇÃO</td>
+                    </tr>
+                </tbody>
+            </table>
+        </main>
+{% endblock %}

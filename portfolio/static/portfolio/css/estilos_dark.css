@@ -1,0 +1,447 @@
+* {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-weight: lighter;
+}
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    height: 100%;
+    width: 100%;
+    background-color: rgb(36, 61, 59);
+
+}
+
+
+header {
+    text-align: center;
+    margin-right: 10px;
+    margin-right: 10px;
+    background-color: rgb(27, 117, 110);
+    color: rgb(173, 240, 225);
+    text-decoration: dotted;
+}
+
+
+nav {
+    position: relative;
+    z-index: 1;
+}
+
+nav ul,
+nav li,
+nav a {
+    margin: 0;
+    padding: 0;
+    border: none;
+    outline: none;
+}
+
+nav ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    background-color: rgb(27, 117, 110);
+    box-shadow: 0 2px 3px rgba(0, 0, 0, 0.1);
+}
+
+nav ul li {
+    display: block;
+    position: relative;
+    background-color:rgb(27, 117, 110);
+}
+
+
+/* Top-level menu links */
+nav ul li a {
+    display: block;
+    padding: 1em;
+    color: black;
+    font-size: 1.1em;
+    font-weight: bold;
+    text-decoration: none;
+    transition: color 0.3s ease-out;
+}
+
+/* Change color on hover */
+nav ul li a:hover {
+    color: black;
+    background-color: darkgray;
+    content: "▸";
+}
+
+/* Sub-menu */
+nav ul ul {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: rgb(27, 117, 110);
+    box-shadow: 0 2px 3px rgba(0, 0, 0, 0.1);
+    white-space: nowrap;
+}
+
+nav ul li:hover>ul {
+    display: inherit;
+}
+
+nav ul ul li {
+    width: 100%;
+}
+
+nav ul ul li a {
+    display: block;
+    padding: 0.5em 1em;
+    color: black;
+    font-size: 1em;
+    text-decoration: none;
+}
+
+nav ul ul li a:hover {
+    color: #28282B;
+}
+
+nav ul ul ul {
+    left: 100%;
+    top: 0;
+}
+
+
+.menu-large {
+    padding: 1rem 0rem;
+}
+
+.flex-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50vh;
+    width: 100vw;
+    background-color: rgb(27, 117, 110);
+    color: rgb(116, 115, 117);
+    font-size: 4rem;
+}
+
+
+.pos-relative img {
+    position: relative;
+    width: 100%;
+    top: 10px;
+}
+
+.pos-relative {
+    position: relative;
+}
+
+.pos-absolute {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    font-size: 4rem;
+    color: rgb(241, 238, 245);
+}
+
+
+div.parallax {
+    margin: 20px;
+    border: 1px solid black;
+}
+
+
+
+@media only screen and (min-width:601px) {
+ 
+
+    .parallax {
+        background-image: url("portfolio/static/portfolio/images/monteBatu.JPG");
+        min-height: 400px;
+        background-attachment: fixed;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+    .parallax_2 {
+        background-image: url("portfolio/static/portfolio/images/sailling.JPG");
+        min-height: 400px;
+        background-attachment: fixed;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+    .parallax_1 {
+        background-image: url("portfolio/static/portfolio/images/inTheOcean.JPG");
+        min-height: 400px;
+        background-attachment: fixed;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+    .parallax_3 {
+        background-image: url("portfolio/static/portfolio/images/belem_1.JPG");
+        min-height: 400px;
+        background-attachment: fixed;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+}
+
+.menu-mobile {
+    display: none;
+}
+
+
+
+@media only screen and (max-width:600px) {
+    body {
+        font-size: 0.5em;
+    }
+
+    nav {
+        justify-content: start !important;
+    }
+
+    .burguer-menu {
+        display: block;
+        width: 2.2rem;
+        position: relative;
+    }
+
+    .burguer-menu .center {
+        border: 2px solid black;
+        width: 90%;
+        display: block;
+        position: absolute;
+        top: 49%;
+    }
+
+    .burguer-menu::before {
+        content: "";
+        border: 2px solid black;
+        width: 100%;
+        display: block;
+        margin-bottom: 1rem;
+    }
+
+    .burguer-menu::after {
+        content: "";
+        border: 2px solid black;
+        width: 100%;
+        display: block;
+    }
+
+    .menu-mobile {
+        display: block;
+    }
+
+    .menu-large {
+        display: none;
+    }
+
+    .parallax {
+        background-image: url("portfolio/static/portfolio/images/monteBatu.JPG");
+        min-height: 400px;
+        background-attachment: fixed;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+}
+
+
+section {
+    margin: 50px 0;
+    text-align: center;
+}
+
+#contactos {
+    justify-content: space-between;
+}
+
+h2 {
+    margin-bottom: 20px;
+}
+
+.pos-absolute {
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+ /*   align-items: left; */
+}
+
+.pos-absolute.div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.pos-absolute div:hover {
+    color: aquamarine;
+    transform: scale(1.5) rotate(10deg);
+}
+
+
+main {
+    height: 100vh;
+    background-image: url("portfolio/static/portfolio/images/vida_academica_1.JPG");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+    background-color: rgb(27, 117, 110);
+    text-align: center;
+    color: #167569;
+}
+
+h1 {
+    position: absolute;
+    top: 15vh;
+    width: 100%;
+}
+
+
+th,
+td {
+    border: 1px solid black;
+    padding: 8px;
+    text-align: left;
+    color: white;
+}
+
+th {
+    text-align: center;
+}
+
+table td.aprovado:before {
+    content: "✅";
+    display: inline-block;
+    text-align: center;
+    width: 100%;
+}
+
+.header-tr {
+    font-weight: bold;
+}
+
+.tabela1ano,
+.tabela2ano,
+.tabela3ano,
+.tabelaProjectos {
+    display: inline-block;
+  /*  width: 50wh;*/
+    vertical-align: top;
+    margin-right: 2%;
+    margin-top: 15vh;
+    background-color: #28282B;
+    opacity: 0.9;
+}
+
+.tabela3ano {
+    margin-right: 0;
+}
+
+.tabelaProjectos {
+    margin-right: 12rem;
+    margin-left: 12rem;
+}
+
+.toggle {
+    display: inline-block;
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+    width: 60px;
+    height: 30px;
+}
+
+.toggle-container {
+    display: flex;
+    align-items: center;
+}
+
+.toggle input {
+    display: none;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    border-radius: 30px;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 2px;
+    bottom: 2px;
+    background-color: white;
+    border-radius: 50%;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+input:checked+.slider {
+    background-color: #ccc;
+}
+
+input:checked+.slider:before {
+    -webkit-transform: translateX(30px);
+    -ms-transform: translateX(30px);
+    transform: translateX(30px);
+}
+
+.icon {
+    position: absolute;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+    font-size: 16px;
+}
+
+.sun {
+    left: 5px;
+}
+
+.moon {
+    right: 5px;
+}
+
+i {
+    color: black;
+}
+
+a i {
+    color: white;
+}
+
+footer {
+    text-align: center;
+    background-color: rgb(27, 117, 110);
+    padding: 10px 10px;
+    color: black;
+}

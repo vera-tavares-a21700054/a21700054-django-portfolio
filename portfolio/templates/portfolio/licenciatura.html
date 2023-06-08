@@ -1,0 +1,80 @@
+{% extends 'portfolio/layout.html' %}
+
+{% block main %}
+    <div id="licenciatura" class="">
+    {% for licenciatura in licenciatura %}
+        <div class="percurso_academico-info">
+            <h3>{{ licenciatura.nome }}</h3>
+            <p>{{ licenciatura.ano }}</p>
+            <p>{{ licenciatura.semestre}}</p>
+            <p>{{ licenciatura.disciplina }}</p>
+            <p>{{ licenciatura.ects }}</p>
+            <p>{{ licenciatura.estado }}</p>
+        </div>
+    {% endfor %}
+    </div>
+{% endblock %}
+
+{% block main %}
+
+     <main>
+            <h1><span style="color:#13312d; font-weight:bold; font-size:xxx-large; text-shadow: 10cap;">Licenciatura
+                    Informática de Gestão</h1></span>
+
+            <table class="tabela1ano">
+                <thead>
+                    <tr>
+                        <th colspan="4">
+                            1º Ano
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="header-tr">
+                        <td>Semestre</td>
+                        <td>Disciplina</td>
+                        <td>ECTS</td>
+                        <td>Estado</td>
+                    </tr>
+                    <tr>
+                </tbody>
+            </table>
+
+            <table class="tabela2ano">
+                <thead>
+                    <tr>
+                        <th colspan="4">
+                            2º Ano
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="header-tr">
+                        <td>Período</td>
+                        <td>Disciplina</td>
+                        <td>ECTS</td>
+                        <td>Estado</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <table class="tabela3ano">
+                <thead>
+                    <tr>
+                        <th colspan="4">
+                            3º Ano
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="header-tr">
+                        <td>Período</td>
+                        <td>Disciplina</td>
+                        <td>ECTS</td>
+                        <td>Estado</td>
+                    </tr>
+                </tbody>
+            </table>
+        </main>
+
+{% endblock %}

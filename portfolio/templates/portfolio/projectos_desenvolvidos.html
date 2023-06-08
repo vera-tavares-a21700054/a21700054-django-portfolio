@@ -1,0 +1,28 @@
+{% extends 'portfolio/layout.html' %}
+
+{% block main %}
+    <div id="projectos_desenvolvidos" class="">
+    {% for projectos_desenvolvidos in projectos_desenvolvidos %}
+        <div class="projectos_desenvolvidos-info">
+            <h3>{{ projectos_desenvolvidos.nome }}</h3>
+            <p>{{ projectos_desenvolvidos.descricao}}</p>
+        </div>
+    {% endfor %}
+    </div>
+{% endblock %}
+
+{% block main %}
+        <main>
+            <h1><span style="color:#13312d; font-weight:bold; font-size:xxx-large; text-shadow: 10cap;">Projectos Desenvolvidos</h1>
+            </span>
+
+            <table class="tabelaProjectosDesenvolvidos">
+                <tbody>
+                    <tr class="header-tr">
+                        <td>NOME</td>
+                        <td>DESCRIÇÃO</td>
+                    </tr>
+                </tbody>
+            </table>
+        </main>
+{% endblock %}
