@@ -1,39 +1,45 @@
 {% extends 'portfolio/layout.html' %}
 
 {% block main %}
-    <div id="contacto" class="">
-    {% for contacto in contacto %}
-        <div class="contacto-info">
-            <h3>{{ contacto.tipo }}</h3>
-            <p>{{ contacto.url}}</p>
+    <main class="mainB">
+        <div id="contacto" class="">
+            {% for contacto in contacto %}
+                <div class="contacto-info">
+                    <h3>{{ contacto.tipo }}</h3>
+                    <p>{{ contacto.url }}</p>
+                </div>
+            {% endfor %}
         </div>
-    {% endfor %}
-    </div>
-{% endblock %}
-
-{% block main %}
-  <section>
-        <div class="pos-relative" id="img">
-            <img class="img myself" src="{% static 'portfolio/images/peaceAndQuiet.JPG'%}" width="1250" height="950">
-            <div class="pos-absolute"> How to find me 🙂</div>
-        </div>
-    </section>
-    <section>
-        <div class="contactos" id="contactos">
-            <div>
+        <section>
+            {% load static %}
+            <div class="pos-relative" id="img">
+                <img class="img myself" src="{% static 'portfolio/images/peaceAndQuiet.JPG' %}" width="1250"
+                     height="950">
+                <div class="pos-absolute"> How to find me 🙂</div>
+            </div>
+        </section>
+        <section>
+            <div class="contactos" id="contactos">
                 <div>
-                    <a href="mailto:veramstavares@outlook.com"><img src="{% static 'portfolio/images/mail.PNG'%}"
-                            alt="Mail">veramstavares@outlook.com</a>
-                    <a href="tel:+351914145105"><img src="{% static 'portfolio/whatsApp.PNG'%}" alt="whatsApp">+351 91 414 5105</a>
-                    <a href="insta:verinha.tavares"><img src="{% static 'portfolio/images/insta.PNG'%}" alt="Insta">@verinha.tavares</a>
-                    <a href="pinterest:https://pin.it/3LRxRal"><img src="{% static 'portfolio/images/pinterest.PNG'%}"
-                            alt="https://pin.it/3LRxRal">https://pin.it/3LRxRal</a>
-                    <a href="Facebook:Verinha Tavares"><img src="{% static 'portfolio/images/facebook.PNG'%}" alt="Facebook">Verinha
-                        Tavares</a>
-                    <a href="LinkedIn:Vera Tavares"><img src="{% static 'portfolio/images/linkeIn.PNG'%}"
-                            alt="LinkedIn">https://www.linkedin.com/in/vera-tavares-728aa21a</a>
+                    <div>
+                        {% load static %}
+                        <a href="mailto:veramstavares@outlook.com"><img src="{% static 'portfolio/images/mail.PNG' %}"
+                                                                        alt="Mail">veramstavares@outlook.com</a>
+                        <a href="tel:+351914145105"><img src="{% static 'portfolio/images/whatsApp.PNG' %}"
+                                                         alt="whatsApp">+351 91 414 5105</a>
+                        <a href="insta:verinha.tavares"><img src="{% static 'portfolio/images/insta.PNG' %}"
+                                                             alt="Insta">@verinha.tavares</a>
+                        <a href="pinterest:https://pin.it/3LRxRal"><img
+                                src="{% static 'portfolio/images/pinterest.PNG' %}"
+                                alt="https://pin.it/3LRxRal">https://pin.it/3LRxRal</a>
+                        <a href="Facebook:Verinha Tavares"><img src="{% static 'portfolio/images/facebook.PNG' %}"
+                                                                alt="Facebook">Verinha
+                            Tavares</a>
+                        <a href="LinkedIn:Vera Tavares"><img src="{% static 'portfolio/images/linkeIn.PNG' %}"
+                                                             alt="LinkedIn">https://www.linkedin.com/in/vera-tavares-728aa21a</a>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
+        <br>
 {% endblock %}

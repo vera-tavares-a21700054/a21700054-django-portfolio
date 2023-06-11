@@ -3,14 +3,87 @@
 {% extends 'portfolio/layout.html' %}
 
 {% block main %}
-    <h3>Portfolio</h3>
+    <main class="mainB">
     <br>
+    <h2><span style="color:#13312d; font-weight:bold; font-size:x-large;"> Portfolio </span></h2>
+<br>
 
-    <p>Projecto Programação Web </p>
+
+    <p> <span style="color:#13312d; font-weight:bold; font-size:large;">Projecto Programação Web </span></p>
     <br>
-
 
     {% load static %}
-    <img src="{% static 'portfolio/images/25globosOuro.PNG' %}">
+    <img src="{% static 'portfolio/images/25globosOuro.JPG' %}">
+
+    <div>
+            <div>
+                <p>Nascida às 19h do 15 de Abril de 1981, na Maternidade Alfredo da Costa, em Lisboa. </p>
+                </p>Alfacinha de gema com muito orgulho.</p>
+                <p>Segunda filha da Maria e do Augusto, e única irmã do Hugo. </p>
+            </div>
+
+            <div class="parallax"></div>
+
+            <div>
+                <p>Carneira, e por isso teimosa por natureza, mas com um grande coração.</p>
+                <p>Amiga dos seus amigos, óptima ouvinte e confidente.</p>
+                <p>Detesta injustiças e mentiras, ou que traiam a sua confiança!</p>
+            </div>
+
+            <div class="parallax"></div>
+
+
+            <div>
+                <p>Trabalha como FreeLancer para a EDP, e sempre que as horas permitem presta também serviços de
+                    consultoria em diversas áreas.</p>
+                <p> Estudante na ULHT desde 2017, finalmente a terminar este ano a Licenciatura de Informática de
+                    Gestão, em regime pós-laboral.</p>
+            </div>
+
+            <div class="parallax"></div>
+
+            <div>
+                <p>Polivalente em diversas áreas, provavelmente pela necessidade da sua incessante procura por
+                    aquilo que a faça sentir
+                    profissionalmente realizada.</p>
+                <p>Se fosse só escolher, seria cantora sem sombra de dúvidas! Mas como não foi abençoada com esse
+                    dom,
+                    não quer ser uma concorrente do Zé Cabra ou da Maria Leal. </p>
+            </div>
+
+            <div class="parallax"></div>
+
+            <div>
+                <p>Apaixonada por praia, sol e mar. Para ela seria Verão o ano todo.</p>
+                <p>Os dias cinzentos deixam-na deprimida. </p>
+            </div>
+
+            <div class="parallax"></div>
+
+            <div>
+                <p>Adora viajar, conhecer novas culturas, destinos e cozinhas.</p>
+                <p>Detesta trânsito!</p>
+            </div>
+
+            <div class="parallax"></div>
+
+            <div>
+                <p>Quando ganhar o euromilhões, nunca mais diz bom dia! (pois detesta acordar cedo) 🤪</p>
+                <p>Já tem todo um plano de acção preparado para quando o prémio lhe sair!🤩 </p>
+            </div>
+        </div>
+    </section>
+    <section>
+        <figure>
+            <iframe width="315" height="560" src="{% static '../images/video1.MP4' %}" title="myVideo" frameborder="4px"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen></iframe>
+        </figure>
+        <span style="color:black; font-weight:bold; font-size: 1.5em;">Make a Wish!</span>
+    </section>
+    <br>
+    <br>
+    <br>
+</main>
 
 {% endblock %}

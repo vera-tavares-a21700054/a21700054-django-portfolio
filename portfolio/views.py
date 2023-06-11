@@ -9,7 +9,7 @@ from django.contrib.auth.decorators import login_required
 
 def home_page_view(request):
     if not request.user.is_authenticated:
-        return redirect('login')
+        return redirect('portfolio:login')
 
     return render(request, 'portfolio/home.html')
 
@@ -23,7 +23,7 @@ def login_view(request):
                             password=password)
         if user is not None:
             login(request, user)
-            return redirect('home')
+            return redirect('portfolio:home')
         else:
             return render(request, "portfolio/login.html", {'message': "Invalid credentials."})
     return render(request, 'portfolio/login.html')
@@ -31,13 +31,20 @@ def login_view(request):
 
 def logout_view(request):
     logout(request)
-    return render(request, "portfolio/login.html")
+    return render(request, "portfolio/login.html", {"message": "Logged Out"})
 
 
-@login_required
 def licenciatura_page_view(request):
-    return render(request, 'portfolio/licenciatura.html')
+    licenciatura1 = Licenciatura.objects.all().filter(ano='1Ano')
+    licenciatura2 = Licenciatura.objects.all().filter(ano='2Ano')
+    licenciatura3 = Licenciatura.objects.all().filter(ano='3Ano')
 
+    context = {
+        'licenciatura1': licenciatura1,
+        'licenciatura2': licenciatura2,
+        'licenciatura3': licenciatura3,
+    }
+    return render(request, 'portfolio/licenciatura.html', context)
 
 
 def experiencia_profissional_page_view(request):
@@ -56,12 +63,31 @@ def contacto_page_view(request):
 
 
 def outras_competencias_page_view(request):
-    return render(request, 'portfolio/outras_competencias.html')
+    outras_competencias = OutrasCompetencias.objects.all()
+
+    context = {
+        'outras_competencias': outras_competencias
+    }
+    return render(request, 'portfolio/outras_competencias.html', context)
 
 
 def percurso_academico_page_view(request):
-    return render(request, 'portfolio/percurso_academico.html')
+    percurso_academico = PercursoAcademico.objects.all()
+
+    context = {
+        'percurso_academico': percurso_academico
+    }
+    return render(request, 'portfolio/percurso_academico.html', context)
 
 
 def projectos_desenvolvidos_page_view(request):
-    return render(request, 'portfolio/projectos_desenvolvidos.html')
+    projectos_desenvolvidos = ProjectosDesenvolvidos.objects.all()
+
+    context = {
+        'projectos_desenvolvidos': projectos_desenvolvidos
+    }
+    return render(request, 'portfolio/projectos_desenvolvidos.html', context)
+
+
+def experimente_voce_page_view(request):
+    return render(request, 'portfolio/experimente_voce.html')

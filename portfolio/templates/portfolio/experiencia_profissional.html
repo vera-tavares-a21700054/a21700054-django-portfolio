@@ -1,32 +1,29 @@
-
 {% extends 'portfolio/layout.html' %}
 
 {% block main %}
-    <div id="experiencia_profissional" class="">
-    {% for experiencia_profissional in experiencia_profissional %}
-        <div class="experiencia_profissional-info">
-            <h3>{{ experiencia_profissional.nome }}</h3>
-            <p>{{ experiencia_profissional.dataInicio }} - {{ experiencia_profissional.dataFim }}</p>
-            <p>{{ experiencia_profissional.descricao}}</p>
-        </div>
-    {% endfor %}
-    </div>
-{% endblock %}
-
-{% block main %}
-        <main>
-            <h1><span style="color:#13312d; font-weight:bold; font-size:xxx-large; text-shadow: 10cap;">Experiência Profissional</h1>
-            </span>
-
-            <table class="tabelaExperiênciaProfissional">
-                <tbody>
-                    <tr class="header-tr">
-                        <td>NOME</td>
-                        <td>DATA DE INICIO</td>
-                        <td>DATA FIM</td>
-                        <td>DESCRIÇÃO</td>
-                    </tr>
-                </tbody>
-            </table>
-        </main>
+    <br>
+    <h1><span style="color:#13312d; font-weight:bold; font-size:xxx-large;">Experiência Profissional</span></h1>
+    <br>
+    <br>
+    <br>
+    <table class="tabelaExperiênciaProfissional">
+        <thead>
+        <tr class="header-tr">
+            <th>NOME</th>
+            <th>DATA DE INICIO</th>
+            <th>DATA FIM</th>
+            <th>DESCRIÇÃO</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for experiencia in experiencia_profissional %}
+            <tr>
+                <td>{{ experiencia.nome }}</td>
+                <td>{{ experiencia.dataInicio }}</td>
+                <td>{{ experiencia.dataFim }}</td>
+                <td>{{ experiencia.descricao  | safe }}</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
 {% endblock %}

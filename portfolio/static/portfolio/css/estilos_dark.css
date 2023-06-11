@@ -54,7 +54,7 @@ nav ul {
 nav ul li {
     display: block;
     position: relative;
-    background-color:rgb(27, 117, 110);
+    background-color: rgb(27, 117, 110);
 }
 
 
@@ -87,7 +87,7 @@ nav ul ul {
     white-space: nowrap;
 }
 
-nav ul li:hover>ul {
+nav ul li:hover > ul {
     display: inherit;
 }
 
@@ -154,12 +154,11 @@ div.parallax {
 }
 
 
+@media only screen and (min-width: 601px) {
 
-@media only screen and (min-width:601px) {
- 
 
     .parallax {
-        background-image: url("portfolio/static/portfolio/images/monteBatu.JPG");
+        background-image: url("../images/monteBatu.JPG");
         min-height: 400px;
         background-attachment: fixed;
         background-position: center;
@@ -168,7 +167,7 @@ div.parallax {
     }
 
     .parallax_2 {
-        background-image: url("portfolio/static/portfolio/images/sailling.JPG");
+        background-image: url("../images/sailling.JPG");
         min-height: 400px;
         background-attachment: fixed;
         background-position: center;
@@ -177,7 +176,7 @@ div.parallax {
     }
 
     .parallax_1 {
-        background-image: url("portfolio/static/portfolio/images/inTheOcean.JPG");
+        background-image: url("../images/inTheOcean.JPG");
         min-height: 400px;
         background-attachment: fixed;
         background-position: center;
@@ -186,7 +185,7 @@ div.parallax {
     }
 
     .parallax_3 {
-        background-image: url("portfolio/static/portfolio/images/belem_1.JPG");
+        background-image: url("../images/belem_1.JPG");
         min-height: 400px;
         background-attachment: fixed;
         background-position: center;
@@ -201,8 +200,7 @@ div.parallax {
 }
 
 
-
-@media only screen and (max-width:600px) {
+@media only screen and (max-width: 600px) {
     body {
         font-size: 0.5em;
     }
@@ -249,7 +247,7 @@ div.parallax {
     }
 
     .parallax {
-        background-image: url("portfolio/static/portfolio/images/monteBatu.JPG");
+        background-image: url("../images/monteBatu.JPG");
         min-height: 400px;
         background-attachment: fixed;
         background-position: center;
@@ -277,7 +275,7 @@ h2 {
     display: flex;
     flex-direction: column;
     justify-content: left;
- /*   align-items: left; */
+    /*   align-items: left; */
 }
 
 .pos-absolute.div {
@@ -293,10 +291,23 @@ h2 {
     transform: scale(1.5) rotate(10deg);
 }
 
+.mainB {
+    height: 100vh;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+    background-color: rgb(27, 117, 110);
+    text-align: center;
+    color: #167569;
+    background-image: none;
+
+}
 
 main {
     height: 100vh;
-    background-image: url("portfolio/static/portfolio/images/vida_academica_1.JPG");
+    background-image: url("../images/vida_academica_1.JPG");
     background-position: center;
     background-repeat: no-repeat;
     background-position: center;
@@ -307,11 +318,11 @@ main {
     color: #167569;
 }
 
-h1 {
+/*h1 {
     position: absolute;
     top: 15vh;
     width: 100%;
-}
+}*/
 
 
 th,
@@ -342,7 +353,7 @@ table td.aprovado:before {
 .tabela3ano,
 .tabelaProjectos {
     display: inline-block;
-  /*  width: 50wh;*/
+    /*  width: 50wh;*/
     vertical-align: top;
     margin-right: 2%;
     margin-top: 15vh;
@@ -404,11 +415,11 @@ table td.aprovado:before {
     transition: .4s;
 }
 
-input:checked+.slider {
+input:checked + .slider {
     background-color: #ccc;
 }
 
-input:checked+.slider:before {
+input:checked + .slider:before {
     -webkit-transform: translateX(30px);
     -ms-transform: translateX(30px);
     transform: translateX(30px);
@@ -441,7 +452,10 @@ a i {
 
 footer {
     text-align: center;
-    background-color: rgb(27, 117, 110);
+    background-color: rgb(173, 240, 225);
     padding: 10px 10px;
-    color: black;
+    color: rgb(115, 117, 117);
+    bottom: 0;
+    position: fixed;
+    width: 100%;
 }

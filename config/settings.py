@@ -117,6 +117,8 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
 STATIC_URL = 'portfolio/static/'
+MEDIA_ROOT = 'portfolio/static/portfolio/images/'
+MEDIA_URL = 'images/'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
@@ -126,3 +128,4 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 # Login
 
 LOGIN_URL = 'users:login'
+

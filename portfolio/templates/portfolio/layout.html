@@ -9,38 +9,39 @@
 
 <body>
 <header>
-    <div>Vera Tavares</div>
-     <nav>
+    <nav>
+        <ul>
+            <li><a href="{% url 'portfolio:home' %}">Home</a></li>
+            <li><a>Educação</a>
                 <ul>
-                    <li><a href="{% url 'portfolio:home' %}">Home</a></li>
-                    <li><a>Educação</a>
+                    <li><a href="{% url 'portfolio:percurso_academico' %}">Percurso Académico</a></li>
+                    <li><a href="{% url 'portfolio:licenciatura' %}">Licenciatura</a></li>
+                    <li><a href="{% url 'portfolio:outras_competencias' %}">Outras Competências</a></li>
+                    <li><a href="{% url 'portfolio:projectos_desenvolvidos' %}">Projectos Desenvolvidos</a></li>
+                    <li><a>Laboratórios Realizados</a>
                         <ul>
-                            <li><a href="{% url 'portfolio:percurso_academico' %}">Percurso Académico</a></li>
-                            <li><a href="{% url 'portfolio:licenciatura' %}">Licenciatura</a></li>
-                            <li><a href="{% url 'portfolio:outras_competencias' %}">Outras Competências</a></li>
-                            <li><a href="{% url 'portfolio:projectos_desenvolvidos' %}">Projectos Desenvolvidos</a></li>
-                            <li><a>Laboratórios Realizados</a>
-                                <ul>
-                                    <li><a href="http://veratavares.pythonanywhere.com/"  target="_blank">Lab2</a></li>
-                                    <li><a href="http://a21700054vera.pythonanywhere.com/" target="_blank">Lab3</a></li>
-                                    <li><a href="https://vt21700054.pythonanywhere.com/a21700054-pw-lab4/" target="_blank">Lab4</a></li>
-                                </ul>
-                            </li>
+                            <li><a href="http://veratavares.pythonanywhere.com/" target="_blank">Lab2</a></li>
+                            <li><a href="http://a21700054vera.pythonanywhere.com/" target="_blank">Lab3</a></li>
+                            <li><a href="https://vt21700054.pythonanywhere.com/a21700054-pw-lab4/"
+                                   target="_blank">Lab4</a></li>
                         </ul>
                     </li>
-                    <li><a href="{% url 'portfolio:experiencia_profissional' %}">Experiência Profissional</a></li>
-                    <li><a href="https://vt21700054.pythonanywhere.com/Portfolio/playground.html"  target="_blank">Experimente Você Mesmo!</a></li>
-                    <li><a href="{% url 'portfolio:contacto' %}">Contactos</a></li>
                 </ul>
-                <div class="toggle-container">
-                    <label class="toggle">
-                        <input type="checkbox" id="mode-toggle">
-                        <span class="slider"></span>
-                        <span class="icon sun"><i class="fas fa-sun"></i></span>
-                        <span class="icon moon"><i class="fas fa-moon"></i></span>
-                    </label>
-                </div>
-            </nav>
+            </li>
+            <li><a href="{% url 'portfolio:experiencia_profissional' %}">Experiência Profissional</a></li>
+            <li><a href="https://vt21700054.pythonanywhere.com/Portfolio/playground.html" target="_blank">Experimente
+                Você Mesmo!</a></li>
+            <li><a href="{% url 'portfolio:contacto' %}">Contactos</a></li>
+        </ul>
+        <div class="toggle-container">
+            <label class="toggle">
+                <input type="checkbox" id="mode-toggle">
+                <span class="slider"></span>
+                <span class="icon sun"><i class="fas fa-sun"></i></span>
+                <span class="icon moon"><i class="fas fa-moon"></i></span>
+            </label>
+        </div>
+    </nav>
 </header>
 
 <main>
@@ -48,27 +49,29 @@
     {% endblock main %}
 </main>
 
-<footer><img src="{% static 'portfolio/images/ulht.PNG' %}" alt="ULHT"> ULHT - Universidade Lusófona de Humanidades e Tecnologias | Vera
-    Tavares | a21700054 | 2023 | <a href="{% static 'portfolio/images/Mapa_do_Site.PNG' %}" target="_blank">Mapa do Site  </a></footer>
+<footer><img src="{% static 'portfolio/images/ulht.PNG' %}" alt="ULHT"> ULHT - Universidade Lusófona de Humanidades e
+    Tecnologias | Vera
+    Tavares | a21700054 | 2023 | <a href="{% static 'portfolio/images/Mapa_do_Site.PNG' %}" target="_blank">Mapa do
+        Site </a></footer>
 
-</body>
+
 <script>
     const modeSwitch = document.getElementById('mode-toggle');
-    const linkElement = document.querySelector('link[href="portfolio/css/layout.css"]');
+    const linkElement = document.querySelector('link[href="{% static 'portfolio/css/layout.css' %}"]');
 
     // Verifica se há escolha armazenada no localStorage
     const mode = localStorage.getItem('mode');
     if (mode === 'dark') {
-        linkElement.setAttribute('href', 'portfolio/css/estilos_dark.css');
+        linkElement.setAttribute('href', "{% static 'portfolio/css/estilos_dark.css' %}");
         modeSwitch.checked = true;
     }
 
     modeSwitch.addEventListener('click', () => {
-        if (linkElement.getAttribute('href') === 'portfolio/css/layout.css') {
-            linkElement.setAttribute('href', 'portfolio/css/estilos_dark.css');
+        if (linkElement.getAttribute('href') === '{% static 'portfolio/css/layout.css' %}') {
+            linkElement.setAttribute('href', '{% static 'portfolio/css/estilos_dark.css' %}');
             localStorage.setItem('mode', 'dark');
         } else {
-            linkElement.setAttribute('href', 'portfolio/css/layout.css');
+            linkElement.setAttribute('href', '{% static 'portfolio/css/layout.css' %}');
             localStorage.setItem('mode', 'light');
         }
     });
@@ -81,4 +84,3 @@
     });
 
 </script>
-</html>

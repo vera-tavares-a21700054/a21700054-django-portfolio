@@ -159,7 +159,7 @@ div.parallax {
 
 
     .parallax {
-        background-image: url("portfolio/static/portfolio/images/monteBatu.JPG");
+        background-image: url("../images/monteBatu.JPG");
         min-height: 400px;
         background-attachment: fixed;
         background-position: center;
@@ -168,7 +168,7 @@ div.parallax {
     }
 
     .parallax_2 {
-        background-image: url("portfolio/static/portfolio/images/sailling.JPG");
+        background-image: url("../images/sailling.JPG");
         min-height: 400px;
         background-attachment: fixed;
         background-position: center;
@@ -177,7 +177,7 @@ div.parallax {
     }
 
     .parallax_1 {
-        background-image: url("portfolio/static/portfolio/images/inTheOcean.JPG");
+        background-image: url("../images/inTheOcean.JPG");
         min-height: 400px;
         background-attachment: fixed;
         background-position: center;
@@ -186,7 +186,7 @@ div.parallax {
     }
 
     .parallax_3 {
-        background-image: url("portfolio/static/portfolio/images/belem_1.JPG");
+        background-image: url("../images/belem_1.JPG");
         min-height: 400px;
         background-attachment: fixed;
         background-position: center;
@@ -249,7 +249,7 @@ div.parallax {
     }
 
     .parallax {
-        background-image: url("portfolio/static/portfolio/images/monteBatu.JPG");
+        background-image: url("../images/monteBatu.JPG");
         min-height: 400px;
         background-attachment: fixed;
         background-position: center;
@@ -293,24 +293,38 @@ h2 {
     transform: scale(1.5) rotate(10deg);
 }
 
+.mainB{
+    height: 100vh;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+    background-color: rgb(173, 240, 225);
+    color: rgb(116, 115, 117);
+    text-align: center;
+    background-image: none;
+
+}
 
 main {
     height: 100vh;
-    background-image: url('portfolio/static/portfolio/images/vida_academica_1.JPG');
+    background-image: url("../images/vida_academica_1.JPG");
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
-    background-color: rgb(212, 247, 239);
     text-align: center;
     color: black;
 }
 
+/*
 h1 {
     position: absolute;
     top: 15vh;
     width: 100%;
 }
+*/
 
 
 th,
@@ -318,7 +332,7 @@ td {
     border: 1px solid black;
     padding: 8px;
     text-align: left;
-    color: white;
+    color: black;
 }
 
 th {
@@ -336,9 +350,9 @@ table td.aprovado:before {
     font-weight: bold;
 }
 
-.tabela1ano,
-.tabela2ano,
-.tabela3ano,
+.tabela1Ano,
+.tabela2Ano,
+.tabela3Ano,
 .tabelaProjectos {
     display: inline-block;
    /* width: 50 wh;*/
@@ -349,7 +363,7 @@ table td.aprovado:before {
     opacity: 0.9;
 }
 
-.tabela3ano {
+.tabela3Ano {
     margin-right: 0;
 }
 
@@ -443,4 +457,7 @@ footer {
     background-color: rgb(173, 240, 225);
     padding: 10px 10px;
     color: rgb(115, 117, 117);
+    bottom: 0;
+    position: fixed;
+    width: 100%;
 }

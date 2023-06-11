@@ -1,0 +1,16 @@
+{% extends 'portfolio/layout.html' %}
+
+
+
+    <head>
+        <title>Tarefas</title>
+        <script src="{% static 'portfolio/tarefas.js' %}"></script>
+    </head>
+    <body>
+    <h1> Tarefas </h1>
+    <ul id="lista"></ul>
+    <form>
+        <input id="tarefa" placeholder="novatarefa" type="text">
+        <input id="submit" type="gravar">
+    </form>
+    </body>

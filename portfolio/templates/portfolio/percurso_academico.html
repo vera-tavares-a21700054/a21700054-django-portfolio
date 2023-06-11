@@ -1,31 +1,30 @@
 {% extends 'portfolio/layout.html' %}
 
 {% block main %}
-    <div id="percurso_academico" class="">
-    {% for percurso_academico in percurso_academico %}
-        <div class="percurso_academico-info">
-            <h3>{{ percurso_academico.nome }}</h3>
-            <p>{{ percurso_academico.dataInicio }} - {{ percurso_academico.dataFim }}</p>
-            <p>{{ percurso_academico.instituicao}}</p>
-        </div>
-    {% endfor %}
-    </div>
+    <br>
+    <h1><span style="color:#13312d; font-weight:bold; font-size:xxx-large; ">Percurso Académico</span></h1>
+    <br>
+    <br>
+    <br>
+    <table class="tabelaPercursoAcademico">
+        <thead>
+        <tr class="header-tr">
+            <th>NOME</th>
+            <th>DATA DE INICIO</th>
+            <th>DATA FIM</th>
+            <th>INSTITUIÇÃO</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for percurso in percurso_academico %}
+            <tr>
+                <td>{{ percurso.nome }}</td>
+                <td>{{ percurso.dataInicio }}</td>
+                <td>{{ percurso.dataFim }}</td>
+                <td>{{ percurso.instituicao }}</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
 {% endblock %}
 
-{% block main %}
-        <main>
-            <h1><span style="color:#13312d; font-weight:bold; font-size:xxx-large; text-shadow: 10cap;">Percurso Académico</h1>
-            </span>
-
-            <table class="tabelaPercursoAcademico">
-                <tbody>
-                    <tr class="header-tr">
-                        <td>NOME</td>
-                        <td>DATA DE INICIO</td>
-                        <td>DATA FIM</td>
-                        <td>INSTITUIÇÃO</td>
-                    </tr>
-                </tbody>
-            </table>
-        </main>
-{% endblock %}
