@@ -35,6 +35,7 @@ class OutrasCompetencias(models.Model):
 class ProjectosDesenvolvidos(models.Model):
     nome = models.CharField(max_length=100)
     descricao = models.TextField(max_length=3000)
+    imagem = models.FileField(upload_to='', null=True, blank=True)
 
     def __str__(self):
         return self.nome
@@ -77,3 +78,14 @@ class Autor(models.Model):
 
     def __str__(self):
         return self.nome
+
+from django.db import models
+
+class Tarefa(models.Model):
+    titulo = models.CharField(max_length=200)
+    prioridade = models.IntegerField(default=1)
+    concluido = models.BooleanField(default=False)
+    criado = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return self.titulo

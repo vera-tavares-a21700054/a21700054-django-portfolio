@@ -271,6 +271,37 @@ h2 {
     margin-bottom: 20px;
 }
 
+.projectos {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    align-items: center;
+    padding: 50px
+}
+
+.projectos div {
+    display: flex;
+    justify-content: space-around;
+    border-radius: 20px;
+    box-shadow: 5px 5px 15px #535353;
+    margin: 10px;
+}
+
+.projectos div img {
+    border-radius: 30px 30px;
+    height: 100%;
+}
+
+
+.projectos div div:last-child {
+    width: 100%;
+    padding: 60px;
+    border-radius: 0 20px 20px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .pos-absolute {
     display: flex;
     flex-direction: column;

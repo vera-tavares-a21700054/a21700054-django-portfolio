@@ -117,21 +117,41 @@ nav ul ul ul {
     padding: 1rem 0rem;
 }
 
-.flex-container {
+
+.projectos {
     display: flex;
-    justify-content: center;
+    flex-flow: row wrap;
+    justify-content: space-around;
     align-items: center;
-    height: 50vh;
-    width: 100vw;
-    background-color: rgb(173, 240, 225);
-    color: rgb(116, 115, 117);
-    font-size: 4rem;
+    padding: 50px
+}
+
+.projectos div {
+    display: flex;
+    justify-content: space-around;
+    border-radius: 20px;
+    box-shadow: 5px 5px 15px #535353;
+    margin: 10px;
+}
+
+.projectos div img {
+    border-radius: 30px 30px;
+    height: 100%;
 }
 
 
+.projectos div div:last-child {
+    width: 100%;
+    padding: 60px;
+    border-radius: 0 20px 20px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 .pos-relative img {
     position: relative;
     width: 100%;
+
     top: 10px;
 }
 
@@ -300,7 +320,7 @@ h2 {
     background-position: center;
     background-size: cover;
     background-attachment: fixed;
-    background-color: rgb(173, 240, 225);
+    background-color:  rgb(222, 248, 242);
     color: rgb(116, 115, 117);
     text-align: center;
     background-image: none;

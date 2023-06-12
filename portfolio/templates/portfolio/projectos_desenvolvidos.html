@@ -5,13 +5,14 @@
     <h1><span style="color:#13312d; font-weight:bold; font-size:xxx-large;">Projectos Desenvolvidos</span></h1>
     <br>
     <br>
-    <br>
+    <br>{% comment %}
     <table class="tabelaProjectosDesenvolvidos">
 
         <thead>
         <tr class="header-tr">
             <th>NOME</th>
             <th>DESCRIÇÃO</th>
+            <th>IMAGEM</th>
         </tr>
         </thead>
         <tbody>
@@ -19,8 +20,96 @@
             <tr>
                 <td>{{ projectos.nome }}</td>
                 <td>{{ projectos.descricao | safe }}</td>
+                {% if projectos.imagem != null %}
+                    <td><img src="../{{ projectos.imagem }}">Imagem</td>
+                {% endif %}
             </tr>
         {% endfor %}
         </tbody>
     </table>
+{% endcomment %}
+
+    <section>
+        <h1><span style="color:#13312d; font-weight:bold; font-size:x-large;">Trabalho Final de Curso</span></h1>
+        <div class="projectos" id="projectos">
+            <div>
+                 {% load static %}
+                <div><img src="{% static 'portfolio/images/TFC_.PNG' %}" alt="TFC"></div>
+                <div>
+                    <p>Desenvolvimento da Aplicação "Travel Community" com as seguintes caracteristicas:
+                        <br>
+                    <p>- Aplicação gratuita, simples, de utilização intuitiva pelos seus utilizadores.</p>
+                    <br>
+                    <p>- Público alvo, utilizadores dos 18 aos 80 anos, que tenham gosto por viagens, fotografia
+                        e na sua grande maioria sejam utilizadores de redes sociais</p>
+                    <p>- Funcionalidades disponíveis em modo offline, funcionando na sua plenitude em modo
+                        online</p>
+                    <p>- Permitirá troca de experiências e informações em tempo real com outros utilizadores,
+                        através da ferramenta de chat</p>
+                    <p>- Permitirá fazer match com outros utilizadores do mesmo escalão etário, mesmo local de
+                        viagem e/ou mesmas datas de viagem</p>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section>
+        <h1><span style="color:#13312d; font-weight:bold; font-size:x-large;">DEISI Jungle</span></h1>
+        <div class="projectos" id="projectos">
+            <div>
+                 {% load static %}
+                <div><img src="{% static 'portfolio/images/Deisi.PNG' %}" alt="Deisi"></div>
+                <div>
+                    <p>Desenvolvimento de uma aplicação (programa) usando as linguagens Java e Kotlin, aplicando
+                        conceitos de modelação
+                        e Programação Orientada a Objetos (encapsulamento, herança, polimorfismo, etc.) e conceitos
+                        de programação Funcional (mapping, filtering, streams). </p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section>
+        <h1><span style="color:#13312d; font-weight:bold; font-size:x-large;">APP Travel In My Hand</span></h1>
+        <div class="projectos" id="projectos">
+            <div>
+                 {% load static %}
+                <div> <img src="{% static 'portfolio/images/TravelInMyHand.PNG' %}" alt="TravelInMyHand"></div>
+                <div>
+                    <p>Aplicação simples, de utilização intuitiva pelos seus utilizadores, que permite:
+                    <p>- Registar informação acerca do planeamento de viagens </p>
+                    <p>- Registar informação relativa as viagens em curso </p>
+                    <p>- Registar informação referente a locais visitados </p>
+                    <p>- Pesquisar informação de locais registados </p>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section>
+        <h1><span style="color:#13312d; font-weight:bold; font-size:x-large;">APP At Your Service</span></h1>
+        <div class="projectos" id="projectos">
+            <div>
+                 {% load static %}
+                <div> <img src="{% static 'portfolio/images/AYS.PNG' %}" alt="AtYourService"> </div>
+                <div>
+                    <p>Desenvolvimento de protótipo que pretende dar resposta à lacuna identificada pela empresa de
+                        investimentos Ice
+                        Te Apanho, relativamente à necessidade de mercado quanto a soluções de prestação de serviços
+                        domésticos
+                        ao domicílio, avaliando a usabilidade desta aplicação junto do seu público alvo.
+                    <p> Para uma maior aceitação da aplicação junto do seu público alvo, foi pensada uma aplicação
+                        simples, de utilização intuitiva pelos seus utilizadores, tanto na perspetiva dos
+                        utilizadores contratantes como para os prestadores de serviços (tarefeiros). </p>
+                    <p> O público em geral terá acesso à consulta dos serviços disponibilizados pelos tarefeiros
+                        registados nesta aplicação. Para os utilizadores registados, após login efectuado, terão
+                        disponibilizadas áreas distintas de consulta, e de acesso a serviços disponibilizados,
+                        através das quais serão disponibilizadas funcionalidades de contratação e gestão de
+                        serviços, dependendo do perfil de utilizador.</p>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <br>
+    <br>
 {% endblock %}
