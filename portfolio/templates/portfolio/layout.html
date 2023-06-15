@@ -5,6 +5,8 @@
     <title>Vera Tavares</title>
     {% load static %}
     <link rel="stylesheet" href="{% static 'portfolio/css/layout.css' %}">
+    {% block head %}
+    {% endblock %}
 </head>
 
 <body>
@@ -24,13 +26,15 @@
                             <li><a href="http://a21700054vera.pythonanywhere.com/" target="_blank">Lab3</a></li>
                             <li><a href="https://vt21700054.pythonanywhere.com/a21700054-pw-lab4/"
                                    target="_blank">Lab4</a></li>
+                            <li><a href="https://vt21700054.pythonanywhere.com/Portfolio/index.html"
+                                   target="_blank">Lab5</a></li>
                         </ul>
                     </li>
                 </ul>
             </li>
             <li><a href="{% url 'portfolio:experiencia_profissional' %}">Experiência Profissional</a></li>
-            <li><a href="https://vt21700054.pythonanywhere.com/Portfolio/playground.html" target="_blank">Experimente
-                Você Mesmo!</a></li>
+            <li><a href="{% url 'portfolio:experimente_voce' %}">Experimente Você!</a></li>
+            <li><a href="{% url 'portfolio:adicionar_info' %}">Actualizar Informação</a></li>
             <li><a href="{% url 'portfolio:contacto' %}">Contactos</a></li>
         </ul>
         <div class="toggle-container">
@@ -51,7 +55,7 @@
 
 <footer><img src="{% static 'portfolio/images/ulht.PNG' %}" alt="ULHT"> ULHT - Universidade Lusófona de Humanidades e
     Tecnologias | Vera
-    Tavares | a21700054 | 2023 | <a href="{% static 'portfolio/images/Mapa_do_Site.PNG' %}" target="_blank">Mapa do
+    Tavares | a21700054 | 2023 | <a href="{% static 'portfolio/images/Mapa_do_Site.png' %}" target="_blank">Mapa do
         Site </a></footer>
 
 

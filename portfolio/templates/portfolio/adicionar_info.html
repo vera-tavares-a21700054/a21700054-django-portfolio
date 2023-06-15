@@ -1,0 +1,143 @@
+{% extends 'portfolio/layout.html' %}
+{% block head %}
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'portfolio/css/adicionar.css' %}">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+{% endblock %}
+{% block main %}
+    <br>
+    <h1><span style="color:#13312d; font-weight:bold; font-size:xxx-large;">Actualizar Informação</span></h1>
+    <br>
+    <br>
+    <br>
+    <div class="tabbed-form">
+        <ul class="tab-menu">
+            <li><a href="#" onclick="openTab('tab1')">Percurso Academico</a></li>
+            <li><a href="#" onclick="openTab('tab2')">Outras Competências</a></li>
+            <li><a href="#" onclick="openTab('tab3')">Experiência Profissional</a></li>
+            <li><a href="#" onclick="openTab('tab4')">Licenciatura</a></li>
+        </ul>
+
+        <div id="tab1" class="tab">
+            <h2>Adicionar Percurso Académico</h2>
+            <form action="{% url 'portfolio:adicionar' 'percursoAcademico' %}" method="post"
+                  enctype="multipart/form-data">
+                {% csrf_token %}
+                {{ percursoAcademico.as_table }}
+                <br>
+                <br>
+                <input type="submit" value="Criar" role="button"
+                       class="btn btn-danger" Criar>
+                <br>
+                <br>
+            </form>
+
+            <ul>
+                {% for dado in dadosPercursoAcademico %}
+                    <li>
+                        {{ dado.nome }} - {{ dado.dataInicio }} - {{ dado.dataFim }} - {{ dado.instituicao }}
+                        <a href="{% url 'portfolio:edita' 'percursoAcademico' dado.id %}"
+                           class="btn btn-warning btn-sm">Editar</a>
+                        <a href="{% url 'portfolio:apaga' 'percursoAcademico' dado.id %}" role="button"
+                           class="btn btn-danger">Apagar</a>
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+
+
+        <div id="tab2" class="tab">
+            <h2>Adicionar Outras Competências</h2>
+            <form action="{% url 'portfolio:adicionar' 'outrasCompetencias' %}" method="post"
+                  enctype="multipart/form-data">
+                {% csrf_token %}
+                {{ outrasCompetencias.as_table }}
+                <br>
+                <br>
+                <input type="submit" value="Criar" role="button"
+                       class="btn btn-danger" Criar>
+                <br>
+                <br>
+            </form>
+
+            <ul>
+                {% for dado in dadosOutrasCompetencias %}
+                    <li>
+                        {{ dado.nome }} - {{ dado.dataInicio }} - {{ dado.dataFim }} - {{ dado.instituicao }}
+                        <a href="{% url 'portfolio:edita' 'outrasCompetencias' dado.id %}"
+                           class="btn btn-warning btn-sm">Editar</a>
+                        <a href="{% url 'portfolio:apaga' 'outrasCompetencias' dado.id %}" role="button"
+                           class="btn btn-danger">Apagar</a>
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+
+        <div id="tab3" class="tab">
+            <h2>Adicionar Experiência Profissional</h2>
+            <form action="{% url 'portfolio:adicionar' 'experienciaProfissional' %}" method="post"
+                  enctype="multipart/form-data">
+                {% csrf_token %}
+                {{ experienciaProfissional.as_table }}
+                <br>
+                <br>
+                <input type="submit" value="Criar" role="button"
+                       class="btn btn-danger" Criar>
+                <br>
+                <br>
+            </form>
+
+            <ul>
+                {% for dado in dadosExperienciaProfissional %}
+                    <li>
+                        {{ dado.nome }} - {{ dado.dataInicio }} - {{ dado.dataFim }} - {{ dado.descricao }}
+                        <a href="{% url 'portfolio:edita' 'experienciaProfissional' dado.id %}"
+                           class="btn btn-warning btn-sm">Editar</a>
+                        <a href="{% url 'portfolio:apaga' 'experienciaProfissional' dado.id %}" role="button"
+                           class="btn btn-danger">Apagar</a>
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+
+
+        <div id="tab4" class="tab">
+            <h2>Adicionar Disciplina</h2>
+            <form action="{% url 'portfolio:adicionar' 'licenciatura' %}" method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+                {{ licenciatura.as_table }}
+                <br>
+                <br>
+                <input type="submit" value="Criar" role="button"
+                       class="btn btn-danger" Criar>
+                <br>
+                <br>
+            </form>
+
+            <ul>
+                {% for dado in dadosLicenciatura %}
+                    <li>
+                        {{ dado.semestre }} - {{ dado.disciplina }} - {{ dado.ECTs }} - {{ dado.estado }}
+                        <a href="{% url 'portfolio:edita' 'licenciatura' dado.id %}"
+                           class="btn btn-warning btn-sm">Editar</a>
+                        <a href="{% url 'portfolio:apaga' 'licenciatura' dado.id %}" role="button"
+                           class="btn btn-danger">Apagar</a>
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+
+
+    <script>
+        function openTab(tabName) {
+            let i, tabContent;
+            tabContent = document.getElementsByClassName("tab");
+            for (i = 0; i < tabContent.length; i++) {
+                tabContent[i].style.display = "none";
+            }
+            document.getElementById(tabName).style.display = "block";
+        }
+    </script>
+
+{% endblock %}

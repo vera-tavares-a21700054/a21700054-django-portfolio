@@ -167,7 +167,7 @@ div.parallax {
     }
 
     .parallax_2 {
-        background-image: url("../images/sailling.JPG");
+        background-image: url("../images/sailling.jpg");
         min-height: 400px;
         background-attachment: fixed;
         background-position: center;
@@ -176,7 +176,7 @@ div.parallax {
     }
 
     .parallax_1 {
-        background-image: url("../images/inTheOcean.JPG");
+        background-image: url("../images/inTheOcean.jpg");
         min-height: 400px;
         background-attachment: fixed;
         background-position: center;
@@ -185,7 +185,7 @@ div.parallax {
     }
 
     .parallax_3 {
-        background-image: url("../images/belem_1.JPG");
+        background-image: url("../images/belem_1.jpg");
         min-height: 400px;
         background-attachment: fixed;
         background-position: center;
@@ -331,14 +331,14 @@ h2 {
     background-attachment: fixed;
     background-color: rgb(27, 117, 110);
     text-align: center;
-    color: #167569;
+    color: whitesmoke;
     background-image: none;
 
 }
 
 main {
     height: 100vh;
-    background-image: url("../images/vida_academica_1.JPG");
+    background-image: url("../images/vida_academica_1.jpg");
     background-position: center;
     background-repeat: no-repeat;
     background-position: center;
@@ -346,7 +346,7 @@ main {
     background-attachment: fixed;
     background-color: rgb(27, 117, 110);
     text-align: center;
-    color: #167569;
+    color: whitesmoke;
 }
 
 /*h1 {

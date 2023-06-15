@@ -1,0 +1,255 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+    background-color: rgb(173, 240, 225);
+}
+
+main {
+/*   display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    min-height: 130vh;
+    overflow: auto;
+    z-index: 1;*/
+    height: 100vh;
+    background-image: url("../images/vida_academica_1.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    text-align: center;
+    color: black;
+}
+
+div:not(div div) {
+    width: 80% !important;
+    margin: 0 10% !important;
+}
+
+h2 {
+    margin-bottom: 10px;
+}
+
+.data-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    padding: 10px;
+    margin: 10px;
+    line-height: 1.5;
+}
+
+.data-container > *:first-child {
+    margin-top: 0;
+}
+
+#data {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+}
+
+.nome-texto {
+    font-size: 2rem;
+    /*font-style: bold;*/
+    background-color: rgb(179, 182, 179);
+}
+
+.loading-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    margin-top: 40px;
+}
+
+.loading-animation {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    min-width: 50px;
+    min-height: 50px;
+    border-radius: 50%;
+    border: 5px solid #ccc;
+    border-top-color: #333;
+    animation: spin 2s infinite linear;
+}
+
+#nome-animacao {
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+    transition: opacity 0.5s ease-in-out;
+    background-color: rgb(168, 167, 167);
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(359deg);
+    }
+}
+
+.calculator {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid #ccc;
+    border-radius: 15px;
+    box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);
+    padding: 7px;
+    margin: 10px;
+    line-height: 1.5;
+}
+
+.input-box {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+input[type="number"], select {
+    margin-right: 10px;
+    padding: 5px;
+    font-size: 16px;
+    min-width: 20px;
+}
+
+button {
+    margin-right: 10px;
+    padding: 5px 10px;
+    font-size: 16px;
+    background-color: #1ca77d;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.result-box {
+    margin-bottom: 10px;
+    padding: 10px;
+    background-color: #f2f2f2;
+    border-radius: 10px;
+    min-width: 50px;
+    min-height: 30px;
+    text-align: center;
+}
+
+#result {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.image-container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    padding: 10px;
+    margin: 10px;
+    line-height: 1.5;
+}
+
+div img {
+    display: block;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    min-height: 20vh;
+    min-width: 40vh;
+    max-width: 0vh;
+}
+
+#frase {
+    min-width: 40vh;
+    max-width: 40vh;
+    padding: 10px;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+#frase-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    font-size: 24px;
+    font-weight: bold;
+    color: rgb(135, 139, 137);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.nome {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    padding: 10px;
+    margin: 10px;
+    line-height: 1.5;
+}
+
+input[type="text"], select {
+    margin-right: 10px;
+    padding: 5px;
+    font-size: 16px;
+    min-width: 50px;
+}
+
+#enviar {
+    margin-top: 10px;
+}
+
+.esconde {
+    display: none;
+    margin-top: 50px;
+    font-size: 2em;
+}
+
+.mostra {
+    opacity: 1;
+    transition: opacity 0.5s ease-in-out;
+}
+
+
+#mensagem {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    padding: 10px;
+    margin: 10px;
+    line-height: 1.5;
+}
+
+#mensagem:hover {
+    background-color: grey;
+    color: white;
+}

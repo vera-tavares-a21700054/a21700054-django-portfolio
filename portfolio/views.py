@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect
 from .models import *
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
+from .forms import *
 
 
 # Create your views here.
@@ -91,3 +92,78 @@ def projectos_desenvolvidos_page_view(request):
 
 def experimente_voce_page_view(request):
     return render(request, 'portfolio/experimente_voce.html')
+
+
+@login_required
+def actualizacaoInfo_page_view(request):
+    percursoAcademico = PercursoAcademicoForm()
+    outrasCompetencias = OutrasCompetenciasForm()
+    experienciaProfissional = ExperienciaProfissionalForm()
+    licenciatura = LicenciaturaForm()
+
+    dadosPercursoAcademico = PercursoAcademico.objects.all()
+    dadosOutrasCompetencias = OutrasCompetencias.objects.all()
+    dadosExperienciaProfissional = ExperienciaProfissional.objects.all()
+    dadosLicenciatura = Licenciatura.objects.all()
+
+    context = {
+        'percursoAcademico': percursoAcademico,
+        'outrasCompetencias': outrasCompetencias,
+        'experienciaProfissional': experienciaProfissional,
+        'licenciatura': licenciatura,
+        'dadosPercursoAcademico': dadosPercursoAcademico,
+        'dadosOutrasCompetencias': dadosOutrasCompetencias,
+        'dadosExperienciaProfissional': dadosExperienciaProfissional,
+        'dadosLicenciatura': dadosLicenciatura
+    }
+
+    return render(request, 'portfolio/adicionar_info.html', context)
+
+
+def adicionar_info_page_view(request, prefix):
+    if request.method == 'POST':
+        if prefix == 'percursoAcademico':
+            form = PercursoAcademicoForm(request.POST)
+        elif prefix == 'outrasCompetencias':
+            form = OutrasCompetenciasForm(request.POST)
+        elif prefix == 'experienciaProfissional':
+            form = ExperienciaProfissionalForm(request.POST)
+        elif prefix == 'licenciatura':
+            form = LicenciaturaForm(request.POST)
+
+        if form.is_valid():
+            form.save()
+            return redirect('portfolio:adicionar_info')
+        else:
+            return redirect('portfolio:adicionar_info')
+
+
+def editar_info_page_view(request, prefix, item_id):
+    if prefix == 'percursoAcademico':
+        form = PercursoAcademicoForm(request.POST or None, instance=PercursoAcademico.objects.get(id=item_id))
+    elif prefix == 'outrasCompetencias':
+        form = OutrasCompetenciasForm(request.POST or None, instance=OutrasCompetencias.objects.get(id=item_id))
+    elif prefix == 'experienciaProfissional':
+        form = ExperienciaProfissionalForm(request.POST or None, instance=ExperienciaProfissional.objects.get(id=item_id))
+    elif prefix == 'licenciatura':
+        form = LicenciaturaForm(request.POST or None, instance=Licenciatura.objects.get(id=item_id))
+
+    if form.is_valid():
+        form.save()
+        return redirect('portfolio:adicionar_info')
+
+    context = {'form': form, 'prefix': prefix, 'item_id': item_id}
+    return render(request, 'portfolio/editar_info.html', context)
+
+
+def apagar_info_page_view(request, prefix, item_id):
+    if prefix == 'percursoAcademico':
+        PercursoAcademico.objects.get(id=item_id).delete()
+    elif prefix == 'outrasCompetencias':
+        OutrasCompetencias.objects.get(id=item_id).delete()
+    elif prefix == 'experienciaProfissional':
+        ExperienciaProfissional.objects.get(id=item_id).delete()
+    elif prefix == 'licenciatura':
+        Licenciatura.objects.get(id=item_id).delete()
+
+    return redirect('portfolio:adicionar_info')

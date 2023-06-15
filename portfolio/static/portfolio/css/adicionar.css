@@ -1,0 +1,131 @@
+* {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-weight: lighter;
+}
+
+body {
+    background-color: #f5f5f5;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.tabbed-form {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin: 20px;
+    padding: 20px;
+}
+
+.tab-menu {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.tab-menu li {
+    display: inline-block;
+}
+
+.tab-menu li a {
+    background-color: #13312d;
+    color: #fff;
+    display: block;
+    padding: 10px 20px;
+    text-decoration: none;
+}
+
+.tab-menu li a:hover {
+    background-color: #066056;
+}
+
+.tab {
+    display: none;
+}
+
+h2 {
+    color: #13312d;
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+h3 {
+    color: #13312d;
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+li {
+    margin-bottom: 10px;
+}
+
+.btn {
+    background-color: #13312d;
+    border: none;
+    border-radius: 4px;
+    color: #fff;
+    display: inline-block;
+    padding: 8px 16px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #066056;
+}
+
+input[type="text"],
+textarea {
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 8px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.edit-form {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.edit-form h2 {
+    color: #13312d;
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.edit-form input[type="text"],
+.edit-form textarea {
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 8px;
+    width: 100%;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+}
+
+.edit-form input[type="submit"] {
+    background-color: #13312d;
+    border: none;
+    border-radius: 4px;
+    color: #fff;
+    display: inline-block;
+    padding: 8px 16px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+}
+
+.edit-form input[type="submit"]:hover {
+    background-color: #066056;
+}

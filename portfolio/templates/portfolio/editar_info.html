@@ -1,0 +1,16 @@
+
+{% extends 'portfolio/layout.html' %}
+
+{% block main %}
+
+    <h2>{{ prefix }}</h2>
+
+    <form action="{% url 'portfolio:edita' prefix=prefix|lower item_id=item_id %}" method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+
+        <a href="{% url 'portfolio:adicionar_info' %}" role="button" class="btn btn-warning">Cancelar</a>
+        <input type="submit" value="Gravar" class="btn btn-success" >
+    </form>
+
+{% endblock %}

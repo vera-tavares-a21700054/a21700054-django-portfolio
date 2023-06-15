@@ -1,0 +1,208 @@
+{% extends 'portfolio/layout.html' %}
+
+{% block head %}
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'portfolio/css/playground.css' %}">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+{% endblock %}
+
+{% block main %}
+    <main>
+      <div class="data-container">
+        <h2 class="esconde">Olá <span class="nome-texto"></span>, hoje é dia </h2><span id="data"></span>
+      </div>
+
+      <div class="nome">
+        <h2 for="nome">Insira o seu nome:</h2>
+        <input type="text" id="nome">
+        <button id="enviar">Enviar</button>
+
+        <div class="loading-container">
+          <div class="loading-animation"></div>
+          <h2 id="nome-animacao"></h2>
+        </div>
+      </div>
+
+
+      <div class="calculator">
+        <h2>Faça as contas <span class="nome-texto"></span></h2>
+        <div class="input-box">
+          <input type="number" id="num1" placeholder="Insira o primeiro número">
+          <select id="operator">
+            <option value="+">+</option>
+            <option value="-">-</option>
+            <option value="*">*</option>
+            <option value="/">/</option>
+          </select>
+          <input type="number" id="num2" placeholder="Insira o segundo número">
+        </div>
+        <div class="result-box">
+          <div id="result"></div>
+        </div>
+        <div>
+          <button onclick="calculate()">Calcular</button>
+          <button onclick="clearResult()">Limpar</button>
+        </div>
+      </div>
+
+
+      <div id="mensagem" onmouseover="mostrarMensagem()" onmouseout="esconderMensagem()"> <span style="color:#13312d; font-weight:bold; font-size:xx-large;">Passe o cursor aqui</span></div>
+
+      <div class="image-container">
+          {% load static %}
+        <img src="{% static 'portfolio/images/goodVibe.jpg' %}" alt="Descrição da imagem">
+        <input type="text" id="frase" placeholder="Escreva uma frase inspirada na imagem">
+      </div>
+    <br>
+    <br>
+    </main>
+
+
+
+  <script>
+    const modeSwitch = document.getElementById('mode-toggle');
+    const linkElement = document.querySelector('link[href="estilos.css"]');
+
+    // Verifica se há escolha armazenada no localStorage
+    const mode = localStorage.getItem('mode');
+    if (mode === 'dark') {
+        linkElement.setAttribute('href', 'estilos_dark.css');
+        modeSwitch.checked = true;
+    }
+
+    modeSwitch.addEventListener('click', () => {
+        if (linkElement.getAttribute('href') === 'estilos.css') {
+            linkElement.setAttribute('href', 'estilos_dark.css');
+            localStorage.setItem('mode', 'dark');
+        } else {
+            linkElement.setAttribute('href', 'estilos.css');
+            localStorage.setItem('mode', 'light');
+        }
+    });
+
+    // Dark mode toggle
+    const darkModeToggle = document.getElementById('dark-mode-toggle');
+    const body = document.body;
+
+    darkModeToggle.addEventListener('click', () => {
+      body.classList.toggle('dark-mode');
+      if (body.classList.contains('dark-mode')) {
+        darkModeToggle.innerHTML = '<i class="fas fa-moon"></i>';
+      } else {
+        darkModeToggle.innerHTML = '<i class="fas fa-sun"></i>';
+      }
+    });
+
+    window.addEventListener('load', function () {
+      var labLinks = document.querySelectorAll('#laboratorios a');
+      for (var i = 0; i < labLinks.length; i++) {
+        labLinks[i].setAttribute('target', '_blank');
+      }
+    });
+  </script>
+
+  <script>
+    // Data Atual
+    var meses = [
+      "Janeiro",
+      "Fevereiro",
+      "Março",
+      "Abril",
+      "Maio",
+      "Junho",
+      "Julho",
+      "Agosto",
+      "Setembro",
+      "Outubro",
+      "Novembro",
+      "Dezembro"
+    ];
+
+    const data = new Date();
+    const dia = data.getDate();
+    const mes = meses[data.getMonth()];
+    const ano = data.getFullYear();
+
+    const dataFormatada = `${dia} de ${mes}, ${ano}`;
+    document.getElementById("data").innerHTML = dataFormatada;
+
+    // Calculadora
+    function calculate() {
+      const num1 = document.getElementById("num1").value;
+      const operator = document.getElementById("operator").value;
+      const num2 = document.getElementById("num2").value;
+      const expression = num1 + operator + num2;
+      const result = eval(expression);
+      document.getElementById("result").innerHTML = result;
+    }
+
+    function clearResult() {
+      document.getElementById("result").innerHTML = "";
+      document.getElementById("num1").value = "";
+      document.getElementById("num2").value = "";
+      document.getElementById("operator").selectedIndex = 0;
+    }
+
+    // Image
+    const imagem = document.querySelector(".image-container img");
+    const fraseOverlay = document.createElement("span");
+
+    fraseOverlay.id = "frase-overlay";
+    console.log("fraseOverlay element created");
+    imagem.parentNode.insertBefore(fraseOverlay, imagem.nextElementSibling);
+
+    const fraseInput = document.getElementById("frase");
+    fraseInput.addEventListener("input", function () {
+      console.log("Evento input acionado");
+      const frase = fraseInput.value;
+      console.log(frase);
+      imagem.setAttribute("alt", frase);
+      fraseOverlay.textContent = frase;
+    });
+
+    // Nome
+    const enviarBotao = document.getElementById("enviar");
+    const nomeInput = document.getElementById("nome");
+    const escondeDiv = document.querySelector(".esconde");
+
+    enviarBotao.addEventListener("click", function () {
+      const nome = nomeInput.value;
+      console.log(nome);
+
+      // Exibir o nome em um elemento de texto
+      const nomeTextos = document.getElementsByClassName("nome-texto");
+      for (let i = 0; i < nomeTextos.length; i++) {
+        nomeTextos[i].textContent = nome;
+      }
+
+      // Simulate loading delay
+      setTimeout(function () {
+        // Hide loading animation
+        const loadingAnimation = document.querySelector(".loading-animation");
+        loadingAnimation.style.display = "none";
+
+        // Show nome-texto element
+        const nomeAnimacao = document.getElementById("nome-animacao");
+        nomeAnimacao.textContent = nome;
+        // escondeDiv.style.display = "block";
+      }, 2000);
+
+      // Exibir o conteúdo oculto
+      escondeDiv.style.display = "block";
+    });
+
+    // Acções
+    function mostrarMensagem() {
+      const exemplo = document.getElementById("mensagem");
+      exemplo.textContent = "O cursor está sobre o elemento!";
+    }
+
+    function esconderMensagem() {
+      const exemplo = document.getElementById("mensagem");
+      exemplo.textContent = "Passe o cursor aqui";
+    }
+
+  </script>
+
+
+{% endblock %}
