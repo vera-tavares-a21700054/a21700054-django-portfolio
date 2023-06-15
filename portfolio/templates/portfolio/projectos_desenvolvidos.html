@@ -4,36 +4,11 @@
     <br>
     <h1><span style="color:#13312d; font-weight:bold; font-size:xxx-large;">Projectos Desenvolvidos</span></h1>
     <br>
-    <br>
-    <br>{% comment %}
-    <table class="tabelaProjectosDesenvolvidos">
-
-        <thead>
-        <tr class="header-tr">
-            <th>NOME</th>
-            <th>DESCRIÇÃO</th>
-            <th>IMAGEM</th>
-        </tr>
-        </thead>
-        <tbody>
-        {% for projectos in projectos_desenvolvidos %}
-            <tr>
-                <td>{{ projectos.nome }}</td>
-                <td>{{ projectos.descricao | safe }}</td>
-                {% if projectos.imagem != null %}
-                    <td><img src="../{{ projectos.imagem }}">Imagem</td>
-                {% endif %}
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
-{% endcomment %}
-
     <section>
         <h1><span style="color:#13312d; font-weight:bold; font-size:x-large;">Trabalho Final de Curso</span></h1>
         <div class="projectos" id="projectos">
             <div>
-                 {% load static %}
+                {% load static %}
                 <div><img src="{% static 'portfolio/images/TFC_.PNG' %}" alt="TFC"></div>
                 <div>
                     <p>Desenvolvimento da Aplicação "Travel Community" com as seguintes caracteristicas:
@@ -57,7 +32,7 @@
         <h1><span style="color:#13312d; font-weight:bold; font-size:x-large;">DEISI Jungle</span></h1>
         <div class="projectos" id="projectos">
             <div>
-                 {% load static %}
+                {% load static %}
                 <div><img src="{% static 'portfolio/images/Deisi.PNG' %}" alt="Deisi"></div>
                 <div>
                     <p>Desenvolvimento de uma aplicação (programa) usando as linguagens Java e Kotlin, aplicando
@@ -72,8 +47,8 @@
         <h1><span style="color:#13312d; font-weight:bold; font-size:x-large;">APP Travel In My Hand</span></h1>
         <div class="projectos" id="projectos">
             <div>
-                 {% load static %}
-                <div> <img src="{% static 'portfolio/images/TravelInMyHand.PNG' %}" alt="TravelInMyHand"></div>
+                {% load static %}
+                <div><img src="{% static 'portfolio/images/TravelInMyHand.PNG' %}" alt="TravelInMyHand"></div>
                 <div>
                     <p>Aplicação simples, de utilização intuitiva pelos seus utilizadores, que permite:
                     <p>- Registar informação acerca do planeamento de viagens </p>
@@ -89,8 +64,8 @@
         <h1><span style="color:#13312d; font-weight:bold; font-size:x-large;">APP At Your Service</span></h1>
         <div class="projectos" id="projectos">
             <div>
-                 {% load static %}
-                <div> <img src="{% static 'portfolio/images/AYS.PNG' %}" alt="AtYourService"> </div>
+                {% load static %}
+                <div><img src="{% static 'portfolio/images/AYS.PNG' %}" alt="AtYourService"></div>
                 <div>
                     <p>Desenvolvimento de protótipo que pretende dar resposta à lacuna identificada pela empresa de
                         investimentos Ice
