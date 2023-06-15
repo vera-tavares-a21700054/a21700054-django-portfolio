@@ -1,38 +1,18 @@
 from django.shortcuts import render, redirect
+from django.urls import reverse
 from .models import *
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
 from .forms import *
+from bs4 import BeautifulSoup
+import requests
 
 
 # Create your views here.
 
 
 def home_page_view(request):
-    if not request.user.is_authenticated:
-        return redirect('portfolio:login')
-
     return render(request, 'portfolio/home.html')
-
-
-def login_view(request):
-    if request.method == "POST":
-        username = request.POST['username']
-        password = request.POST['password']
-        user = authenticate(request,
-                            username=username,
-                            password=password)
-        if user is not None:
-            login(request, user)
-            return redirect('portfolio:home')
-        else:
-            return render(request, "portfolio/login.html", {'message': "Invalid credentials."})
-    return render(request, 'portfolio/login.html')
-
-
-def logout_view(request):
-    logout(request)
-    return render(request, "portfolio/login.html", {"message": "Logged Out"})
 
 
 def licenciatura_page_view(request):
@@ -120,6 +100,26 @@ def actualizacaoInfo_page_view(request):
     return render(request, 'portfolio/adicionar_info.html', context)
 
 
+def login_view(request):
+    if request.method == "POST":
+        username = request.POST['username']
+        password = request.POST['password']
+        user = authenticate(request,
+                            username=username,
+                            password=password)
+        if user is not None:
+            login(request, user)
+            return redirect('portfolio:adicionar_info')
+        else:
+            return render(request, "portfolio/login.html", {'message': "Invalid credentials."})
+    return render(request, 'portfolio/login.html')
+
+
+def logout_view(request):
+    logout(request)
+    return render(request, "portfolio/home.html", {"message": "Logged Out"})
+
+
 def adicionar_info_page_view(request, prefix):
     if request.method == 'POST':
         if prefix == 'percursoAcademico':
@@ -144,7 +144,8 @@ def editar_info_page_view(request, prefix, item_id):
     elif prefix == 'outrasCompetencias':
         form = OutrasCompetenciasForm(request.POST or None, instance=OutrasCompetencias.objects.get(id=item_id))
     elif prefix == 'experienciaProfissional':
-        form = ExperienciaProfissionalForm(request.POST or None, instance=ExperienciaProfissional.objects.get(id=item_id))
+        form = ExperienciaProfissionalForm(request.POST or None,
+                                           instance=ExperienciaProfissional.objects.get(id=item_id))
     elif prefix == 'licenciatura':
         form = LicenciaturaForm(request.POST or None, instance=Licenciatura.objects.get(id=item_id))
 
@@ -167,3 +168,28 @@ def apagar_info_page_view(request, prefix, item_id):
         Licenciatura.objects.get(id=item_id).delete()
 
     return redirect('portfolio:adicionar_info')
+
+
+def get_html_content():
+    USER_AGENT = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/89.0.4389.114 Safari/537.36"
+    LANGUAGE = "pt-PT,pt;q=0.5"
+    session = requests.Session()
+    session.headers['User-Agent'] = USER_AGENT
+    session.headers['Accept-Language'] = LANGUAGE
+    session.headers['Content-Language'] = LANGUAGE
+    html_content = session.get(f'https://www.bing.com/search?q=meteorologia+Lisboa').text
+    return html_content
+
+
+def meteorologia_page_view(request):
+    context = None
+    if request.GET:
+        html_data = get_html_content()
+        soup = BeautifulSoup(html_data, "html.parser")
+        region = soup.find('span', attrs={'class': 'wtr_foreGround'}).text
+        daytime = soup.find('div', attrs={'class': 'wtr_dayTime'}).text
+        status = soup.find('div', attrs={'class': 'wtr_caption'}).text
+        temperature = soup.find('div', attrs={'class': 'wtr_currTemp'}).text
+        unit = soup.find('div', attrs={'class': 'wtr_currUnit'}).text
+        context = {'region': region, 'daytime': daytime, 'status': status, 'temperature': temperature, 'unit': unit}
+    return render(request, 'portfolio/metereologia.html', context)

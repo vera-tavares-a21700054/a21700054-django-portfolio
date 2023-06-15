@@ -1,0 +1,44 @@
+{% extends 'portfolio/layout.html' %}
+{% block head %}
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'portfolio/css/meteo.css' %}">
+{% endblock %}
+{% block main %}
+    <div class="container col-md-5 text-white" style="margin-top: 30px">
+        <form method="get" action="">
+            <div class="card bg-dark">
+                <div class="card-header">Procurar condições meteorológicas</div>
+                <div class="card-body">
+                    <div class="form-group">
+                        <div class="input-group input-group-lg">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text"><i class="fa fa-location-arrow"></i></span>
+                            </div>
+                            <input type="text" name="location" class="form-control" placeholder="Cidade">
+                        </div>
+                        <input type="submit" class="btn btn-outline-light mt-3" value="Search">
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    {% if region %}
+        <div class="container col-md-5" style="margin-top: 60px;">
+            <div class="card">
+                <div class="card-header bg-dark text-white">
+                    Estado do tempo em {{ region }}
+                </div>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">Dia: {{ daytime }}</li>
+                    <li class="list-group-item">Temperatura: {{ temperature }} {{ unit }}</li>
+                    <li class="list-group-item">Estado: {{ status }}</li>
+                </ul>
+            </div>
+        </div>
+    {% endif %}
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"></script>
+
+{% endblock %}

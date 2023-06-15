@@ -125,7 +125,5 @@ MEDIA_URL = 'images/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-# Login
 
-LOGIN_URL = 'users:login'
 

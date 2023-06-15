@@ -1,0 +1,42 @@
+.container {
+  margin-top: 30px;
+}
+
+.card {
+  background-color: #343a40;
+}
+
+.card-header {
+  background-color: #2b4b45;
+  color: #fff;
+}
+
+.form-control {
+  border: 1px solid #ced4da;
+  border-radius: 0.25rem;
+  font-size: 1.2rem;
+  height: 2.5rem;
+}
+
+.btn {
+  border-radius: 1rem;
+}
+
+.btn-outline-light {
+  color: #d9eee4;
+  border-color: #385959;
+}
+
+.btn-outline-light:hover {
+  color: #24694f;
+  background-color: #f8f9fa;
+  border-color: #f8f9fa;
+}
+
+.text-white {
+  color: #fff;
+}
+
+.fa-location-arrow {
+  color: #fff;
+}
