@@ -26,8 +26,12 @@
             <tr>
                 <td>{{ disciplina.semestre }}</td>
                 <td>{{ disciplina.disciplina }}</td>
-                <td>{{ disciplina.etcs }}</td>
-                <td>{{ disciplina.estado }}</td>
+                <td>{{ disciplina.ects }}</td>
+                {% if disciplina.estado == 'aprovado' %}
+                    <td class="aprovado"></td>
+                {% else %}
+                    <td>{{ disciplina.estado }}</td>
+                {% endif %}
             </tr>
         {% endfor %}
         </tbody>
@@ -48,11 +52,17 @@
             <td>ECTS</td>
             <td>Estado</td>
         </tr>
-        {% for cadeira in licenciatura2 %}
+        {% for disciplina in licenciatura2 %}
+            <tr>
             <td>{{ disciplina.semestre }}</td>
             <td>{{ disciplina.disciplina }}</td>
-            <td>{{ disciplina.etcs }}</td>
-            <td>{{ disciplina.estado }}</td>
+            <td>{{ disciplina.ects }}</td>
+            {% if disciplina.estado == 'aprovado' %}
+                <td class="aprovado"></td>
+            {% else %}
+                <td>{{ disciplina.estado }}</td>
+            {% endif %}
+            </tr>
         {% endfor %}
         </tbody>
     </table>
@@ -76,8 +86,12 @@
             <tr>
                 <td>{{ disciplina.semestre }}</td>
                 <td>{{ disciplina.disciplina }}</td>
-                <td>{{ disciplina.etcs }}</td>
-                <td>{{ disciplina.estado }}</td>
+                <td>{{ disciplina.ects }}</td>
+                {% if disciplina.estado == 'aprovado' %}
+                    <td class="aprovado"></td>
+                {% else %}
+                    <td>{{ disciplina.estado }}</td>
+                {% endif %}
             </tr>
         {% endfor %}
         </tbody>

@@ -3,28 +3,35 @@
 }
 
 .card {
-  background-color: #343a40;
+  background-color: rgb(36, 61, 59);
+  font-size: large;
 }
 
 .card-header {
-  background-color: #2b4b45;
-  color: #fff;
+  background-color: rgb(27, 117, 110);
+  color: rgb(173, 240, 225);
+  font-size: xxx-large;
 }
 
 .form-control {
+  margin-top: 5px;
+  margin-bottom: 5px;
   border: 1px solid #ced4da;
   border-radius: 0.25rem;
-  font-size: 1.2rem;
-  height: 2.5rem;
+  font-size: 1rem;
+  height: 3rem;
 }
 
 .btn {
   border-radius: 1rem;
+  height: 2.55rem;
+  width: 4rem;
+  margin: 2rem;
 }
 
 .btn-outline-light {
-  color: #d9eee4;
-  border-color: #385959;
+  color: #363636;
+  border-color: rgb(27, 117, 110);
 }
 
 .btn-outline-light:hover {
@@ -39,4 +46,17 @@
 
 .fa-location-arrow {
   color: #fff;
+}
+
+.list-group-item{
+  font-size: xx-large;
+  color: whitesmoke;
+}
+
+.list-group{
+  margin: 3rem;
+}
+
+.input-group-prepend{
+  margin: 3rem;
 }

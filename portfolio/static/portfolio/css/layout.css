@@ -379,7 +379,7 @@ table td.aprovado:before {
     vertical-align: top;
     margin-right: 2%;
     margin-top: 15vh;
-    background-color: #28282B;
+    background-color: rgb(27, 117, 110);
     opacity: 0.9;
 }
 

@@ -35,7 +35,7 @@
             <ul>
                 {% for dado in dadosPercursoAcademico %}
                     <li>
-                        {{ dado.nome }} - {{ dado.dataInicio }} - {{ dado.dataFim }} - {{ dado.instituicao }}
+                        {{ dado.nome }} - {{ dado.dataInicio }} - {{ dado.dataFim }}
                         <a href="{% url 'portfolio:edita' 'percursoAcademico' dado.id %}"
                            class="btn btn-warning btn-sm">Editar</a>
                         <a href="{% url 'portfolio:apaga' 'percursoAcademico' dado.id %}" role="button"
@@ -63,7 +63,7 @@
             <ul>
                 {% for dado in dadosOutrasCompetencias %}
                     <li>
-                        {{ dado.nome }} - {{ dado.dataInicio }} - {{ dado.dataFim }} - {{ dado.instituicao }}
+                        {{ dado.nome }} - {{ dado.dataInicio }} - {{ dado.dataFim }}
                         <a href="{% url 'portfolio:edita' 'outrasCompetencias' dado.id %}"
                            class="btn btn-warning btn-sm">Editar</a>
                         <a href="{% url 'portfolio:apaga' 'outrasCompetencias' dado.id %}" role="button"
@@ -90,7 +90,7 @@
             <ul>
                 {% for dado in dadosExperienciaProfissional %}
                     <li>
-                        {{ dado.nome }} - {{ dado.dataInicio }} - {{ dado.dataFim }} - {{ dado.descricao }}
+                        {{ dado.nome }} - {{ dado.dataInicio }} - {{ dado.dataFim }}
                         <a href="{% url 'portfolio:edita' 'experienciaProfissional' dado.id %}"
                            class="btn btn-warning btn-sm">Editar</a>
                         <a href="{% url 'portfolio:apaga' 'experienciaProfissional' dado.id %}" role="button"
@@ -117,7 +117,7 @@
             <ul>
                 {% for dado in dadosLicenciatura %}
                     <li>
-                        {{ dado.semestre }} - {{ dado.disciplina }} - {{ dado.ECTs }} - {{ dado.estado }}
+                        {{ dado.semestre }} - {{ dado.disciplina }} - {{ dado.ects }} - {{ dado.estado }}
                         <a href="{% url 'portfolio:edita' 'licenciatura' dado.id %}"
                            class="btn btn-warning btn-sm">Editar</a>
                         <a href="{% url 'portfolio:apaga' 'licenciatura' dado.id %}" role="button"
